@@ -1,0 +1,14 @@
+  Questions?
+  - What kind of source type will it be? from the physical perspective, ftp server, windows server, regular os (windows, linux) with folder structure
+  - What would be the destination? DB or Azure Storage
+  - What kind of authorisation we should use while getting the source file and how to check permissions while storing the file in the destination location
+  - What naming conventions we should apply for folder, file names?
+  - Should we process somehow the content of the file? Or just copy file from source to destination
+  -
+  - So steps would be:
+      - Start:
+      - Login to ftp
+      - Get all the files from particular folder or filter and get only specific files or whole folder content?
+      - Process the file?
+      - Move the file to azure under the folder name?
+      - End!

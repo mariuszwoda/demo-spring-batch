@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: demo-spring-batch
+  datasource:
+    url: jdbc:h2:file:~/h2-db/demo-spring-batch;AUTO_SERVER=true
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+#    show-sql: true
+    properties:
+      hibernate:
+        format_sql: false
+#        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  sql:
+    init:
+      mode: never
+#      mode: always
+      schema-locations: [classpath:schema.sql, classpath:schema-h2.sql]
+      data-locations: classpath:data.sql
+ftps:
+  cert:
+    path: classpath:cert.p12
+    password: test
+logging:
+  level:
+    org:
+      springframework:
+        batch: INFO
+#        batch: DEBUG
+        web: INFO
+#        web: DEBUG
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: INFO
+#    org.springframework.orm.jpa: DEBUG
+#    org.springframework.transaction: DEBUG
+
+
+management:
+  endpoint:
+    batch:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#        include: health,info,metrics
+#        include: batchJobs
